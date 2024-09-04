@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page.html">Selecciona</a>
+                <a href="page2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["¡Hola caos!", "¡Hola cosmos!"],
+                nombre: "Mi nombre es Lorem Ipsum",
+                motivo: "Tomé este curso porque siempre me ha interesado la programación y la creación de páginas web. Es un área del diseño que considero super importante ya que esta siendo un requerimiento base en muchas áreas laborales. <span>Seguir leyendo</span>.",
+                etc: "Ya revisé mi primera nota y la verdad es que era lo que esperaba, a excepción de que olvidé subir el proceso de la segunda clase asique tuve 0.5 puntos menos :(.",
+            };
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length);
+            console.log(aleatorio);
+            $("h1").html(texto.saludo[aleatorio]);
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            function revelador() {
+                $("#alla").toggleClass("escondido");
+            }
+            $("span").click(revelador);
+        </script>
+    </body>
+</html>
